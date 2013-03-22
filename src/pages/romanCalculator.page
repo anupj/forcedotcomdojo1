@@ -1,0 +1,24 @@
+<apex:page controller="RomanNumeralCalculator">
+
+<apex:form >
+	<apex:inputText value="{!leftProperty}"/>
+	
+	<apex:selectList value="{!selectedOperator}" multiselect="false" size="1">
+		<apex:selectOptions value="{!operatorList}"/>
+	</apex:selectList>
+	
+	<apex:inputText value="{!rightProperty}"/>
+	
+	<apex:commandbutton action="{!calculate}" value="GO!" rerender="result"/>
+	
+	<apex:outputpanel id="result">
+		<apex:outputLabel value="The result is: " id="resultLabel" />
+		
+		<apex:outputtext value="{!result}" />
+	</apex:outputpanel>
+	
+	<br /><br />
+	
+	<apex:outputText value="{!intLeft}" />
+</apex:form>
+</apex:page>
